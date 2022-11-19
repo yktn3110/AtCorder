@@ -20,25 +20,3 @@ int main(void) {
     cout << x << endl;
     return 0;
 }
-/*     if (k > (int)x.size()) {
-        cout << 0 << endl;
-        return 0;
-    }
-
-    reverse(x.begin(), x.end());
-
-    rep(i, k) {
-        if ((i + 1) >= (int)x.size()) break;
-        if (x[i] >= '5') x[i + 1]++;
-        x[i] = '0';
-    }
-
-    rep(i, (int)x.size()) {
-        if (x[i] > '9') {
-            if (i == (int)x.size() - 1) x.push_back('1');
-            else x[i + 1]++;
-            x[i] -= 10;
-        }
-    }
-
-    reverse(x.begin(), x.end()); */
