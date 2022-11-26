@@ -26,23 +26,3 @@ int main(void) {
 
     cout << fixed << setprecision(10) << ans << endl;
 }
-
-/* int main(void) {
-    cin.tie(0);
-    long long a, b;
-
-    cin >> a >> b;
-
-    long double before = a;
-    long double next = a;
-    int cnt = 1;
-    while (next <= before) {
-        before = next;
-        next = b * cnt + a / sqrt(cnt + 1);
-        cnt++;
-    }
-
-    cout << fixed << setprecision(10) << before << endl;
-
-    return 0;
-} */
