@@ -7,21 +7,20 @@ using namespace std;
 using ll = long long;
 using Pss = pair<string, string>;
 
-map<string, string> G;
-map<string, bool> flag;
-string start;
-
-bool dfs(string x) {
-    flag[x] = true;
-    if (G.count(x)) {
-        if (G[x] == start) return false;
-        else return dfs(G[x]);
-    }
-    return true;
-}
-
 int main(void) {
     int n;
+    map<string, string> G;
+    map<string, bool> flag;
+    string start;
+    auto dfs = [&](auto dfs, string x) -> bool {
+        flag[x] = true;
+        if (G.count(x)) {
+            if (G[x] == start) return false;
+            else return dfs(dfs, G[x]);
+        }
+        return true;
+    };
+
     cin >> n;
 
     rep(i, n) {
@@ -34,7 +33,7 @@ int main(void) {
     rep3(v, G) {
         start = v.first;
         if (flag[start]) continue;
-        if (!dfs(v.first)) {
+        if (!dfs(dfs, v.first)) {
             cout << "No" << endl;
             return 0;
         }
